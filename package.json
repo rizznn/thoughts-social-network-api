@@ -19,6 +19,7 @@
   "homepage": "https://github.com/rizznn/thoughts-social-network-api#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "moment": "^2.29.1",
     "mongoose": "^5.13.7"
   }
 }
