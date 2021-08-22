@@ -1,0 +1,20 @@
+{
+  "name": "thoughts-social-network-api",
+  "version": "1.0.0",
+  "description": "A social network web app where users can share their thoughts, react to friends' thoughts and create a friend list. It uses Express.js for routing , MongoDB database and the Mongoose ODM.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rizznn/thoughts-social-network-api.git"
+  },
+  "author": "rizzel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rizznn/thoughts-social-network-api/issues"
+  },
+  "homepage": "https://github.com/rizznn/thoughts-social-network-api#readme"
+}
