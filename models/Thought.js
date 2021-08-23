@@ -1,4 +1,5 @@
 const { Schema, model, Types } = require('mongoose');
+const moment = require('moment');
 
 // Reaction Schema
 const ReactionSchema = new Schema(
@@ -19,7 +20,7 @@ const ReactionSchema = new Schema(
         createdAt: {
             type: Date,
             default: Date.now,
-            get: createdAtTimestamp => moment(createdAtTimestamp).format(('MMM Do, YYYY, h:mm a'))
+            get: createdAtTimestamp => moment(createdAtTimestamp).format(('MMM D YYYY, h:mm a'))
         }
     }
 )
@@ -35,7 +36,7 @@ const ThoughtSchema = new Schema = (
         createdAt: {
             type: Date,
             default: Date.now,
-            get: createdAtTimestamp => moment(createdAtTimestamp).format(('MMM Do, YYYY, h:mm a'))
+            get: createdAtTimestamp => moment(createdAtTimestamp).format(('MMM DD YYYY, h:mm a'))
         },
         // The user that created this thought
         username: {
