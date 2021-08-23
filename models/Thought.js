@@ -25,7 +25,7 @@ const ReactionSchema = new Schema(
     }
 )
 
-const ThoughtSchema = new Schema = (
+const ThoughtSchema = new Schema(
     {
         thoughtText: {
             type: String,
