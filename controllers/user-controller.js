@@ -25,7 +25,6 @@ const userController = {
         // getting a single data also populates thoughts
         .populate({
             path: 'thoughts',
-            path: 'friends',
             select: '-__v'
         })
         .select('-__v')
@@ -56,6 +55,10 @@ const userController = {
             { _id: params.userId },
             body,
             { new: true, runValidators: true })
+            .populate({
+                path: 'thoughts',
+                select: '-__v'
+            })
             .then(dbUserData => {
                 if(!dbUserData) {
                     res.status(400).json({ message: 'No user found with this id!'});

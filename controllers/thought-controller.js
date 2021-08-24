@@ -53,7 +53,7 @@ const thoughtController = {
     },
 
       // Update a thought
-    updateThought(req, res) {
+    updateThought({ params, body }, res) {
         Thought.findOneAndUpdate(
             { _id: params.thoughtId }, 
             { $set: body }, 
@@ -78,7 +78,7 @@ const thoughtController = {
               return res.status(404).json({ message: 'No thought with this id!' });
             }
             return User.findOneAndUpdate(
-              { _id: params.userId },
+              // { _id: params.userId },
               { thoughts: params.thoughtId },
               { $pull: { thoughts: params.thoughtId } },
               { new: true }
