@@ -59,6 +59,7 @@ const thoughtController = {
             { _id: params.thoughtId }, 
             { $set: body }, 
             {  new: true, runValidators: true })
+        .select('-__v')
         .then((dbThoughtData) => {
             if (!dbThoughtData) {
             return res.status(404).json({ message: 'No thought with this id!' });
@@ -78,6 +79,7 @@ const thoughtController = {
         { $push: { reactions: body } },
         { new: true, runValidators: true }
       )
+        .select('-__v')
         .then(dbUserData => {
           if (!dbUserData) {
             res.status(404).json({ message: 'No User found with this id!' });

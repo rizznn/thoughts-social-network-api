@@ -59,6 +59,7 @@ const userController = {
                 path: 'thoughts',
                 select: '-__v'
             })
+            .select('-__v')
             .then(dbUserData => {
                 if(!dbUserData) {
                     res.status(400).json({ message: 'No user found with this id!'});
@@ -71,9 +72,7 @@ const userController = {
 
     // delete a user
     deleteUser({ params }, res) {
-        User.findOneAndDelete(
-            { _id: params.userId })
-            // { thoughts: params.thoughtId })
+        User.findOneAndDelete({ _id: params.userId })
           .then(dbUserData => {
             if (!dbUserData) {
               return res.status(404).json({ message: 'No user found with this id!' });
