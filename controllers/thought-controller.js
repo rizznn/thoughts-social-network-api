@@ -102,12 +102,12 @@ const thoughtController = {
           { new: true }
         );
       })
-      .then(dbThoughtData => {
-        if (!dbThoughtData) {
+      .then(dbUserData => {
+        if (!dbUserData) {
           res.status(404).json({ message: 'No user found with this id!' });
           return;
         }
-        res.json(dbThoughtData);
+        res.json(dbUserData);
       })
       .catch(err => res.json(err));
     },
